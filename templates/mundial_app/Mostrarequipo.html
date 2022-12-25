@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block contenido %}
+  <table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Año de Creacion</th>
+            <th scope="col">Campeon</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% if equipo %}
+    <tr>
+        <th scope="row">{{equipo.id}}</th>
+        <td>{{equipo.nombre}}</td>
+        <td>{{equipo.anio_creacion}}</td>
+        <td>{{equipo.campeon}}</td>
+        {% if equipo.campeon == True %}
+        <td>
+            <img src=" {% static 'img/mundial.jpg'%}">
+        </td>
+        {% endif %}
+
+
+    </tr>
+    {% endif %}
+    </tbody>
+  </table>
+{% endblock %}

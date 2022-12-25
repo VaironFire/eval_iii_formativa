@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block contenido %}
+  <h1>Equipos</h1>
+  <table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Año de Creacion</th>
+            <th scope="col">Campeon</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for equipo in equipos %}
+    <tr>
+        <th scope="row">{{equipo.id}}</th>
+        <td>{{equipo.nombre}}</td>
+        <td>{{equipo.anio_creacion}}</td>
+        <td>{{equipo.campeon}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
